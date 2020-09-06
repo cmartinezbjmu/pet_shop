@@ -1,23 +1,33 @@
 """"Pet views."""
 
 # Django
-from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect
 
 # Forms
 from .forms import PetForm
 
 # Models
 from .models import Pet
+from django.contrib.auth.models import User
 
 # Create your views here.
 
-class CreatePetView(LoginRequiredMixin, CreateView):
-    """Create new pet."""
+def CreatePet(request):
+    if request.method == 'GET':
+        form = PetForm()
+        return render(request, 'pet/create_pet.html', {'form': form})
 
-    template_name='pet/create_pet.html'
-    form_class = PetForm
-    success_url = reverse_lazy('/')
-
+    elif request.method == 'POST':
+        form = PetForm(request.POST)
+        if form.is_valid():
+            Pet.objects.create(user=request.user,
+                               name=form['name'].data, 
+                               pet_type=form['pet_type'].data,
+                               size=form['size'].data,
+                               description=form['description'].data
+                               )
+            return redirect('create_pet')        
+        return render(request, 'pet/create_pet.html', {'form': form})
+    
+def historyPet(request):
+    pass

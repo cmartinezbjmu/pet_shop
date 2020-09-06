@@ -119,3 +119,5 @@ media/
 # redis db
 *.rdb
 celerybeat-schedule.db
+
+.DS_Store

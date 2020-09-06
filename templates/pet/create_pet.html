@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Create new pet</title>
+{% endblock %}
+
+{% block container %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary btn-block mt-5">INICIO</button>
+    </form>
+{% endblock %}

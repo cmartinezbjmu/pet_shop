@@ -1,0 +1,90 @@
+html, body {
+    background: #65BA69;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#auth-container {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+}
+
+#main-navbar {
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+}
+
+.post-container {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+}
+
+.nav-icon a {
+    color: #262626;
+    font-size: 1.3em;
+    display: block;
+    margin-top: .2em;
+    margin-left: 1.2em;
+    font-weight: 100;
+}
+.nav-icon a:hover {
+    color: #1d5e72;;
+}
+#profile-box {
+    background: #65BA69;
+    border-radius: 1px;
+    margin-top: 6em;
+}
+
+#user-posts #post-thumb {
+    background: #fff;
+}
+.form-field {
+    background-color: #65BA69;
+    border-block-end-color: white;
+    border-top: initial;
+    border-left: initial;
+    border-right: initial;
+    border-radius: 0px;
+    text-align: center;
+}
+.form-field-select {
+    color: white;
+    text-align-last: center;
+}
+.form-field-radio {
+    color: white;
+    list-style: none;
+    padding-right: 0px;
+    padding-left: 2.5rem;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+.btn-primary {
+    color: #536D79;
+    background-color: white;
+    border-color: white;
+}
+.btn-primary:hover {
+    color: #536D79;
+    background-color: white;
+    border-color: white;
+}
+.btn-primary:not(:disabled):not(:disabled):active {
+    color: #536D79;
+    background-color: white;
+    border-color: white;
+}
