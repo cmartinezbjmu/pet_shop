@@ -19,7 +19,7 @@ PetShop es una aplicación que le permite a los usuarios registrados agregar, ed
 - Cree un archivo .env en la raíz del proyecto con los siguientes datos
 
 ```bash
-  - SECRET_KEY=q!ywis$p!m8v1s*+n4qucn7^1lcl=9q_aj9hbd$=hkg2=4=!#t
+  - SECRET_KEY=l(ws_1u18omfey+vgyxakv!rgyhx6x(9_(w*pq5s%$zp!o68pn
   - DBNAME=petshopdb
   - DBUSER=postgres
   - DBPASS=admin
