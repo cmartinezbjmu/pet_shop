@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+<title>Login</title>
+{% endblock %}
+
+{% block container %}
+
+    {% if form.errors %}
+        <p class="alert alert-danger">
+          Your username and password didn't match. Please try again.
+        </p>
+    {% endif %}
+    <h4 style="color: white;">Login</h4>
+    <form method="POST" acction="acounts:login">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <input type="text" name="username" id="" class="form-control" placeholder="Username" />
+        </div>
+        
+        <div class="form-group">
+          <input type="password" name="password" id="" class="form-control" placeholder="Password" />
+        </div>
+
+        <button class="btn btn-primary btn-block mt-S" type"submit">Login</button>
+
+    </form>
+
+    <h7 class="mt-5"><a class="mt-5" href="{% url "accounts:signup" %}">Registrese aquí</a></h7>
+    
+{% endblock %}

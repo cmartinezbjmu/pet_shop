@@ -29,7 +29,7 @@ def CreatePet(request):
                                size=form['size'].data,
                                description=form['description'].data
                                )
-            return redirect('create_pet')
+            return redirect('history')
         return render(request, 'pet/create_pet.html', {'form': form})
     
 def historyPet(request):

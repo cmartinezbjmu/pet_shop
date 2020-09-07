@@ -140,3 +140,7 @@ STATICFILES_FINDERS = [
 
 # Set STATIC_ROOT
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/pets/new/'
+LOGOUT_REDIRECT_URL = LOGIN_URL
