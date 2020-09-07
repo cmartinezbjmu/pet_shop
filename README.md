@@ -2,7 +2,7 @@
 
 
 
-PetShop es una aplicación que le permite a los usuarios registrados agregar, editar y eliminar citas para sus mascotas. Esta aplicación está siendo desarrollada con el framework Django y Django REST Framework.
+PetShop es una aplicación que le permite a los usuarios registrados agregar, editar y eliminar citas para sus mascotas. Esta plataforma está siendo desarrollada con el framework Django.
 
 ## Requisitos de instalación
 
