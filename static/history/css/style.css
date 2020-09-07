@@ -190,6 +190,8 @@ label {
   margin-bottom: 0.5rem; }
 
 button {
+  border-color: #7AC943;
+  color: #7AC943;
   border-radius: 0; }
 
 button:focus {
@@ -8213,6 +8215,7 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
+  border-style: groove;
   min-width: 300px;
   max-width: 300px;
   background: white;
@@ -8270,7 +8273,9 @@ a[data-toggle="collapse"] {
     display: none; } }
 
 #content {
-  width: 100%;
+  border-style: groove;
+  min-width: 600px;
+  max-width: 600px;
   padding: 0;
   min-height: 100vh;
   -webkit-transition: all 0.3s;

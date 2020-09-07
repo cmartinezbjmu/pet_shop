@@ -4,7 +4,7 @@
 from django import forms
 
 # Models
-from .models import Pet
+from .models import Pet, MedicalServices
 
 class PetForm(forms.ModelForm):
     """"Pet model form."""
@@ -25,6 +25,14 @@ class PetForm(forms.ModelForm):
         self.fields['size'].empty_label = None
         self.fields['description'].label = ''
         self.fields['size'].widget.choices = [('Pequeno', 'Pequeño'), ('Medio', 'Medio'), ('Grande', 'Grande')]
-        #import pdb; pdb.set_trace()
-        #user = kwargs.pop('user', None)
-        #self.fields['user'] = user
+
+class MedicalServicesForm(forms.ModelForm):
+    class Meta:
+        model = MedicalServices
+        fields = ['service_type', 'date']
+        widgets = {
+            'date': forms.DateTimeInput(attrs={'class': 'form-control datetimepicker-input', 'type': 'datetime-local'}),
+        }
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['service_type'].label = 'Tipo de cita'

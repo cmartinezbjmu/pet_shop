@@ -1,0 +1,20 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 style="padding-left: 0.2rem" class="modal-title" id="myModalLabel">Confirmación eliminar plato</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+         <p class="lead">¿Está seguro de eliminarlo?</p>
+         <form role="form" action="{% url 'delete_meet' id_meet %}" method="post">
+         {% csrf_token %}
+             {{ form.as_p }}
+             <div class="text-center"></div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" style="background-color: rgb(88, 179, 104); border-color: rgb(88, 179, 104)" >Eliminar</button>
+             </div>
+         </form>
+      </div>
+    </div>
+</div>
