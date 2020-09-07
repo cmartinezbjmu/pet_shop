@@ -1,0 +1,111 @@
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Historia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'history/css/style.css' %}">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+		  		<a href="#" class="img logo" style="background-image: url('{% static "img/logo.jpg" %}');"></a>
+            <div class="p-4 pt-4">                  
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active mb-4 mt-4 text-center">
+                <span><i class="fa fa-paw pr-3"></i></span>
+                <a href="#">Historia</a>
+	          </li>
+	          <li class="mb-4 text-center">
+                <span><i class="fa fa-calendar pr-3"></i></span>
+                <a href="#">Citas</a>
+	          </li>
+	          <li class="mb-4 text-center">
+                <span><i class="fa fa-shopping-bag pr-3"></i></span>
+                <a href="#">Tienda</a>
+	          </li>	
+	        </ul>
+
+	        <div class="footer">
+	        </div>
+
+	      </div>
+    	</nav>
+        <div class="ml-1" style="background-color: #65BA69;">
+            <nav id="pet-info">
+            </br>
+            </br>
+              <div class="p-4 mt-5 text-center">
+                    <h7>Nombre</h7>
+                    <h4>{{ pet.name }}</h4>
+		      		<span><i style="font-size: 4rem;" class="fa fa-camera"></i></span>
+	            <ul class="list-unstyled components mb-5">
+	              <li class="active mb-4 mt-4 text-center">
+                    <div style="display: inline-flex;">
+                    <div class="pr-3">
+                        <h7>Tipo</h7>
+                        <h4>{{ pet.pet_type }}</h4>
+                    </div>
+                    <div class="pl-3">
+                        <h7>Tamaño</h7>
+                        <h4>{{ pet.size }}</h4>
+                    </div>
+                    <div>
+	              </li>
+                    <div class="active mb-4 mt-4 text-center">
+                        <h7>Descripción</h7>
+                        <h6 class="mt-2 text-justify">{{ pet.description }}</h6>
+                    </div>
+	            </ul>
+	          </div>
+    	    </nav>        
+        </div>
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+          <div style="color: #536D79;" class="container-fluid">
+            <h3 style="color: #536D79;" class="mb-4 text-center">Historia</h3>
+            <ul class="list-unstyled components mb-2">
+                {% for history in histories %}
+                <li class="text-center">
+                    <div class="mt-3" style="border-bottom-style: groove;">
+                    {% if history.service == '1' %}
+                      <span><img src="{% static 'img/medical.png' %}" height="30" /></span>
+                    {% elif history.service == '2' %}
+                      <span><img src="{% static 'img/syringe.png' %}" height="30" /></span>
+                    {% elif history.service == '3' %}
+                      <span><img src="{% static 'img/deworming.png' %}" height="30" /></span>
+                    {% elif history.service == '4' %}
+                      <span><img src="{% static 'img/shower.png' %}" height="30" /></span>                      
+                    {% elif history.service == '5' %}
+                      <span><img src="{% static 'img/cut.png' %}" height="30" /></span>
+                    {% endif %}
+                    <span class="b pl-4">
+                        <div>
+                            <h6>{{ history.service_type }}</h6>
+                        </div>
+                        <div>
+                            <h6>{{ history.date }}</h6>
+                        </div>
+                    </span><span class="b"><h6>{{ history.hour }}</span></span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+      </div>
+
+    <script src="{% static 'history/js/jquery.min.js' %}"></script>
+    <script src="{% static 'history/js/popper.js' %}"></script>
+    <script src="{% static 'history/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'history/js/main.js' %}"></script>
+
+  </body>
+</html>
